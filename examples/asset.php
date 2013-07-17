@@ -2,7 +2,7 @@
 
 ini_set('display_errors', 1);
 
-include '../sorenson_360.php';
+include dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'sorenson_360.php';
 $account = S360_Account::login('chloe@chloe.com', 'whatever');
 
 $assets = S360_Asset::find_all($account, 0, 1);
