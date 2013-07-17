@@ -106,7 +106,7 @@ class S360_Asset extends S360 {
   
   public function addCategory($name) {
     $data = parent::do_post('/assets/' . $this->id . '/categories', array('category' => array('name' => $name)));
-    return S360_Category::fromJSON($this->account, $data);
+    return S360_Category::fromJSON(/*$this->account,*/ $data);
   }
   
   public function removeCategory() {
@@ -117,7 +117,7 @@ class S360_Asset extends S360 {
   
   public function category() {
     $data = parent::do_get('/assets/' . $this->id . '/categories');
-    return S360_Category::fromJSON($this->account, $data);
+    return S360_Category::fromJSON(/*$this->account,*/ $data);
   }
 
   public function embedCodes() {

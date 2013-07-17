@@ -7,7 +7,7 @@ class S360_Category extends S360
 
   public static function fromJSON($data) {
     $category = new S360_Category;
-    $category->init($account, $data);
+    $category->init(/*$account,*/ $data);
     return $category;
   }
   
@@ -43,8 +43,8 @@ class S360_Category extends S360
     return S360_Category::fromJSON($data);
   }
   
-  private function init($account, $data) {
-    $this->account = $account;
+  private function init(/*$account,*/ $data) {
+    //$this->account = $account;
     
     $this->description = $data['description'];
     $this->name        = $data['name'];

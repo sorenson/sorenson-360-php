@@ -5,10 +5,10 @@ class S360_Group extends S360
   
   public $description, $name, $account, $accountId, $id, $guid;
 
-  public static function fromJSON($account, $data) {
-    $category = new S360_Category;
-    $category->init($account, $data);
-    return $category;
+  public static function fromJSON(/*$account,*/ $data) {
+    $group = new S360_Group;
+    $group->init(/*$account,*/ $data);
+    return $group;
   }
   
   public static function presets($group_id) {
@@ -47,8 +47,8 @@ class S360_Group extends S360
     return S360_Group::fromJSON($data['group']);
   }
   
-  private function init($account, $data) {
-    $this->account = $account;
+  private function init(/*$account,*/ $data) {
+    //$this->account = $account;
     
     $this->description = $data['description'];
     $this->name        = $data['name'];
